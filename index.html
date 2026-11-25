@@ -184,7 +184,7 @@ if(s[0])setSettings(s[0]);DB.prizes=p.map(nPrize);DB.reviews=r.map(nRev)}
 async function loadMe(){if(!DB.ses){DB.me=null;DB.mine={plog:[],slog:[],reviews:[]};return}
 const st=await rpc('member_state',{p_member:DB.ses});
 if(!st||!st.member){DB.ses=null;DB.me=null;LS.del('lw_ses');DB.mine={plog:[],slog:[],reviews:[]};return}
-DB.me=nMem(st.member);DB.mine={plog:(st.point_logs||[]).map(x=>({d:x.delta,note:x.note,t:T(x.created_at)})),slog:(st.spin_logs||[]).map(x=>({prize:x.prize_name,ic:x.prize_icon,t:T(x.created_at)})),reviews:(st.reviews||[]).map(nRev)}}
+DB.me=nMem(st.member);DB.mine={plog:(st.point_logs||[]).map(x=>({d:x.delta,note:x.note,t:T(x.created_at)})),slog:(st.spin_logs||[]).map(x=>({prize:x.prize_name,ic:x.prize_icon,t:T(x.created_at)})),reviews:(st.reviews||[]).map(r=>({...nRev(r),name:DB.me.name,pic:DB.me.pic}))}}
 async function loadAdmin(){const o=await rpc('admin_overview',{p_pin:DB.pin});setSettings(o.settings);DB.members=o.members.map(nMem);DB.prizes=o.prizes.map(nPrize);
 DB.plog=o.point_logs.map(x=>({uid:x.member_id,d:x.delta,note:x.note,t:T(x.created_at)}));DB.slog=o.spin_logs.map(x=>({uid:x.member_id,prize:x.prize_name,ic:x.prize_icon,t:T(x.created_at)}));
 DB.reviews=o.reviews.map(nRev);DB.codes=o.codes.map(c=>({id:c.id,code:c.code,pts:c.points,max:c.max_uses,exp:T(c.expires_at),on:c.active,n:c.used||0}))}
