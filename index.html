@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MONALI SHOP · วงล้อสะสมแต้ม</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Maitree:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff0f4;--paper:#fffafb;--tx:#6b4d57;--hd:#a24a6c;--mu:#b08c9a;--bd:#f6d3de;--bl:#fbd0dd;--p:#ee7fa3;--p2:#dc5f8b;--g:#5aa88a;--y:#f0b44c;--mu2:#8a6371;--ok:#2b7a5a;--wn:#97650f;--er:#c0392b;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a2024;--paper:#35292e;--tx:#f1e0e0;--hd:#f3c7d2;--mu:#c3a9af;--bd:#4a3a40;--bl:#4a343b;--p2:#eba0b4;--mu2:#c3a9af;--ok:#7fd1b0;--wn:#f0c36d;--er:#ff8f9b;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans Thai","Sarabun",system-ui,sans-serif;font-weight:400;line-height:1.7;padding-bottom:40px}
+h1,h2,h3{font-family:"Maitree","Noto Sans Thai",serif;font-weight:500;color:var(--hd)}
+header{position:relative;text-align:center;padding:24px 16px 6px}
+header>:last-child{position:absolute;right:14px;top:14px}
+.brand{display:inline-flex;align-items:center;justify-content:center;gap:2px;font:italic 500 36px/1 "Cormorant Garamond",serif;color:var(--p2);letter-spacing:.02em}
+.sec{border:0;background:transparent;color:var(--p);opacity:.35;padding:4px;cursor:pointer;line-height:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:center;gap:4px;padding:8px 10px;background:var(--bg);border-bottom:1px solid var(--bd)}
+nav a{text-decoration:none;color:var(--mu);font-size:14px;padding:6px 14px;position:relative;transition:color .2s}nav a svg{display:none}
+nav a.on{color:var(--p2);font-weight:500}nav a.on::after{content:"";position:absolute;left:50%;bottom:0;width:18px;height:2px;margin-left:-9px;border-radius:2px;background:var(--p)}
+main{max-width:620px;margin:0 auto;padding:10px 20px}
+body.adm main{max-width:920px}
+.card{background:transparent;padding:32px 0 4px;margin:0}
+h2{margin:0 0 16px;font-size:20px;display:flex;align-items:center;gap:14px}
+h2::before,h2::after{content:"";flex:1;height:1px;background:var(--bd)}
+#mb h2::before,#mb h2::after{display:none}#mb h2{justify-content:center}
+h3{margin:0 0 10px;font-size:16px}
+.hero{text-align:center;padding:36px 0 8px}
+.eb{font:italic 500 16px "Cormorant Garamond",serif;letter-spacing:.32em;text-transform:uppercase;color:var(--p)}
+.arch{position:relative;width:210px;height:250px;margin:18px auto 22px;border-radius:105px 105px 14px 14px;background:var(--bl);overflow:hidden}
+.arch::before{content:"";position:absolute;inset:9px;border:1px solid rgba(255,255,255,.85);border-radius:97px 97px 8px 8px}
+.arch::after{content:"";position:absolute;left:50%;top:38px;width:30px;height:30px;margin-left:-15px;border-radius:50%;background:#fff;opacity:.8}
+.hw{position:absolute;left:50%;bottom:-46px;width:200px;height:200px;margin-left:-100px;border-radius:50%;border:5px solid #fff;background:conic-gradient(#ff9db9 0 60deg,#fff1f4 0 120deg,#ffc2d4 0 180deg,#ffd9e3 0 240deg,#f7b0c8 0 300deg,#ffe6ed 0 360deg);animation:sl 26s linear infinite;box-shadow:0 8px 24px rgba(238,127,163,.35)}
+.hw::after{content:"";position:absolute;inset:38%;border-radius:50%;background:#fff}
+@keyframes sl{to{transform:rotate(360deg)}}
+.hero h1{margin:0 0 8px;font-size:30px;line-height:1.4}.hero p{margin:0 auto 22px;max-width:420px;color:var(--mu);font-size:15px}
+.btn{border:0;border-radius:999px;padding:11px 26px;font:500 15px "Noto Sans Thai",sans-serif;cursor:pointer;background:var(--p);color:#fff;box-shadow:0 6px 16px rgba(238,127,163,.35);transition:transform .15s,background .15s;display:inline-flex;align-items:center;gap:6px;justify-content:center}
+.btn:hover{transform:translateY(-1px);background:#e46d95}.btn:active{transform:scale(.97)}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn.s{padding:5px 15px;font-size:13px;box-shadow:none}
+.btn.o{background:transparent;color:var(--p2);border:1px solid #f2a9c0;box-shadow:none}.btn.o:hover{background:var(--bl)}.btn.d{background:#e57a86}.btn.line{background:#06c755;box-shadow:0 6px 16px rgba(6,199,85,.22)}
+.grid{display:flex;justify-content:center}
+.stat{flex:1;text-align:center;padding:4px 10px;font-size:14px;color:var(--mu)}.stat+.stat{border-left:1px solid var(--bd)}.stat b{display:block;font:500 50px/1.1 "Cormorant Garamond",serif;color:var(--p2)}
+.av{width:40px;height:40px;border-radius:50%;object-fit:cover;background:var(--bl);color:var(--p2);display:inline-flex;align-items:center;justify-content:center;font-weight:500;flex:none;border:3px solid #fff;box-shadow:0 2px 10px rgba(238,127,163,.3)}
+.row{display:flex;align-items:center;gap:10px}.sp{justify-content:space-between}.wrap{flex-wrap:wrap}
+.mu{color:var(--mu);font-size:13px}
+input,textarea,select{width:100%;padding:11px 16px;border-radius:16px;border:1px solid var(--bd);background:var(--paper);color:var(--tx);font:inherit;margin:4px 0 12px;outline:0;transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus,select:focus{border-color:var(--p);box-shadow:0 0 0 4px rgba(255,170,195,.45)}
+input[type=color]{padding:3px;height:44px}input[type=file]{padding:9px}
+label{font-size:13px;color:var(--mu)}
+.star{background:none;border:0;cursor:pointer;padding:2px;transition:transform .2s}.star:hover{transform:scale(1.15)}
+.rv{background:var(--paper);border-radius:20px;padding:12px 16px;margin-top:12px;box-shadow:0 2px 14px rgba(190,120,140,.1)}.rv img.ph{max-width:200px;max-height:200px;border-radius:14px;margin-top:8px;display:block}
+.prev{max-width:160px;max-height:160px;border-radius:14px;display:none;margin-bottom:8px}
+#modal{position:fixed;inset:0;background:rgba(120,70,80,.28);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:20;padding:16px}
+#modal.on{display:flex}#mb{position:relative;background:var(--paper);border-radius:28px;box-shadow:0 20px 50px rgba(150,80,100,.25);padding:26px;max-width:420px;width:100%;max-height:90vh;overflow:auto;animation:pop .35s ease-out}
+@keyframes pop{from{transform:translateY(14px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+#toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%);background:var(--paper);color:var(--hd);padding:10px 22px;border-radius:999px;box-shadow:0 8px 28px rgba(150,80,100,.25);opacity:0;transition:opacity .3s;z-index:30;pointer-events:none;max-width:90%}#toast.on{opacity:1}
+.wheelbox{position:relative;width:min(320px,86vw);margin:26px auto 20px}.wheelbox canvas{width:100%;height:auto;display:block;border-radius:50%;box-shadow:0 0 0 10px #fff,0 16px 40px rgba(238,127,163,.38)}
+.ptr{position:absolute;top:-22px;left:50%;transform:translateX(-50%);z-index:2;width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-top:30px solid var(--p);filter:drop-shadow(0 2px 3px rgba(120,60,80,.25))}
+.hub{position:absolute;top:50%;left:50%;width:54px;height:54px;margin:-27px;border-radius:50%;background:#fff;color:var(--p);box-shadow:0 2px 14px rgba(238,127,163,.45);z-index:2;display:flex;align-items:center;justify-content:center}
+.tabs{display:flex;gap:8px;overflow-x:auto;margin-bottom:14px;padding:2px 2px 8px}.tabs button{white-space:nowrap}
+.tbl{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:9px 8px;border-bottom:1px solid var(--bd);text-align:left}th{color:var(--p2);font-weight:500;font-size:13px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:999px;color:#6b4a52;font-size:14px}
+.bigi{width:96px;height:96px;border-radius:50%;background:var(--bl);box-shadow:0 0 0 8px rgba(251,227,232,.5);display:inline-flex;align-items:center;justify-content:center;animation:bn .8s;color:var(--p)}@keyframes bn{0%{transform:scale(0)}60%{transform:scale(1.2)}100%{transform:scale(1)}}
+.note{background:var(--bl);color:var(--hd);border-radius:14px;padding:8px 14px;font-size:13px;margin-bottom:12px}
+.cfi{position:absolute;top:-12px;width:8px;height:13px;border-radius:50% 50% 50% 0;animation:cf 2.4s ease-in forwards;opacity:0;pointer-events:none}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(420px) rotate(400deg);opacity:0}}
+a{color:var(--p2)}
+/* ---------- admin ---------- */
+[hidden]{display:none!important}
+body.adm{--ap:#c2467a;--ap2:#a93a69}
+body.adm main{max-width:1240px;padding:16px}
+body.adm .mu{color:var(--mu2)}body.adm label{color:var(--tx)}
+body.adm input,body.adm textarea,body.adm select{border-radius:10px;padding:9px 12px;margin:0}
+body.adm .btn{border-radius:10px;box-shadow:none;background:var(--ap);padding:9px 16px;font-size:14px}
+body.adm .btn:hover{background:var(--ap2);transform:none}
+body.adm .btn.s{padding:6px 12px;font-size:13px}
+body.adm .btn.o{background:transparent;color:var(--hd);border:1px solid var(--bd)}body.adm .btn.o:hover{background:var(--bl)}
+body.adm .btn.d{background:var(--er);color:#fff}
+body.adm .btn.dl{background:transparent;color:var(--er);border:1px solid color-mix(in srgb,var(--er) 45%,transparent)}body.adm .btn.dl:hover{background:color-mix(in srgb,var(--er) 10%,transparent)}
+body.adm #mb{border-radius:16px;padding:22px;max-width:440px}
+.btn:focus-visible,.a-ni:focus-visible,.sw:focus-visible,.icb:focus-visible{outline:2px solid var(--ap);outline-offset:2px}
+.a-shell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start}
+.a-side{position:sticky;top:16px;display:flex;flex-direction:column;gap:12px;background:var(--paper);border:1px solid var(--bd);border-radius:16px;padding:14px}
+.a-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;white-space:nowrap;padding:4px 8px 10px;border-bottom:1px solid var(--bd)}.a-logo b{font:italic 500 24px/1 "Cormorant Garamond",serif;color:var(--p2)}.a-logo span{font-size:13px;color:var(--mu2)}
+.a-nav{display:flex;flex-direction:column;gap:2px}
+.a-ni{display:flex;align-items:center;gap:10px;width:100%;padding:9px 10px;border:0;border-radius:10px;background:transparent;color:var(--tx);font:400 14px "Noto Sans Thai",sans-serif;text-align:left;cursor:pointer}
+.a-ni span{flex:1}.a-ni em{font-style:normal;font-size:12px;opacity:.75}.a-ni:hover{background:var(--bl)}.a-ni.on{background:var(--ap);color:#fff;font-weight:500}
+.a-foot{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--bd);padding-top:12px}
+.a-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.a-top h1{margin:0;font-size:24px;line-height:1.3}.a-top p{margin:2px 0 0;font-size:14px;color:var(--mu2)}
+.a-act{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.m-only{display:none}
+.a-panel{background:var(--paper);border:1px solid var(--bd);border-radius:14px;padding:18px;margin-bottom:16px}
+.a-panel>h3{margin:0 0 2px;font-size:16px}.a-panel>.mu{margin:0 0 14px}.a-panel.flush{padding:0;overflow:hidden}
+.a-danger{border-color:color-mix(in srgb,var(--er) 40%,var(--bd))}
+.a-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.a-stat{display:flex;gap:12px;align-items:center;background:var(--paper);border:1px solid var(--bd);border-radius:14px;padding:14px}
+.a-si{width:38px;height:38px;border-radius:10px;background:var(--bl);color:var(--p2);display:flex;align-items:center;justify-content:center;flex:none}
+.a-sv{font:500 24px/1.2 "Maitree","Noto Sans Thai",serif;color:var(--hd)}.a-sl{font-size:13px;color:var(--mu2)}
+.a-split{display:grid;grid-template-columns:300px minmax(0,1fr);gap:16px;align-items:start}
+.a-fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;align-items:start;margin-bottom:16px}.a-fgrid .a-panel{margin:0}
+.a-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.fld{margin-bottom:14px}.fld label{display:block;margin-bottom:4px;font-size:13px;font-weight:500}.fld small{display:block;margin-top:4px;font-size:12px;color:var(--mu2)}
+.a-save{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;justify-content:flex-end;padding:12px 14px;margin-bottom:16px;background:var(--paper);border:1px solid var(--bd);border-radius:14px;box-shadow:0 8px 24px rgba(150,80,100,.15)}
+.a-tool{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px 14px 4px}
+.a-search{position:relative;flex:1;min-width:200px;max-width:340px}.a-search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--mu2);pointer-events:none}body.adm .a-search input{padding-left:38px}
+.a-tbl{overflow-x:auto}.a-tbl table{min-width:520px}
+.a-tbl th{padding:10px 14px;background:color-mix(in srgb,var(--bl) 45%,transparent);color:var(--mu2);font-weight:500;white-space:nowrap}
+.a-tbl td{padding:12px 14px;vertical-align:middle}.a-tbl tr:last-child td{border-bottom:0}
+.a-tbl .num{text-align:right;font-variant-numeric:tabular-nums}.a-tbl tbody tr:hover td{background:color-mix(in srgb,var(--bl) 30%,transparent)}
+.a-empty,.a-tbl td.a-empty{padding:28px 14px;text-align:center;color:var(--mu2)}
+.bdg{display:inline-flex;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500;white-space:nowrap;background:color-mix(in srgb,currentColor 13%,transparent)}
+.bdg.ok{color:var(--ok)}.bdg.wn{color:var(--wn)}.bdg.er{color:var(--er)}.bdg.no{color:var(--mu2)}.pos{color:var(--ok);font-weight:500}.neg{color:var(--er);font-weight:500}
+.code{font-family:ui-monospace,Menlo,monospace;letter-spacing:.04em}
+.sw{position:relative;width:40px;height:24px;padding:0;border:0;border-radius:999px;background:color-mix(in srgb,var(--mu2) 45%,var(--paper));cursor:pointer;transition:background .2s;flex:none}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .2s}.sw.on{background:#3f9d77}.sw.on::after{transform:translateX(16px)}
+.a-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.a-pc{display:flex;flex-direction:column;gap:12px;background:var(--paper);border:1px solid var(--bd);border-radius:14px;padding:14px}.a-pc.out{opacity:.65}.a-pc .mu b{color:var(--tx)}
+.a-sw{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;color:#6b4a52;border:1px solid rgba(0,0,0,.06)}
+.a-bar{height:6px;margin-top:4px;border-radius:99px;background:var(--bl);overflow:hidden}.a-bar i{display:block;height:100%;border-radius:99px;background:var(--ap)}
+.a-grid2{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.a-feed{margin:0;padding:0;list-style:none}.a-feed li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd)}.a-feed li:last-child{border:0}
+.a-revs{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}.a-revs .rv{margin:0;border:1px solid var(--bd);border-radius:14px;box-shadow:none}.rv.off{opacity:.6}
+.a-sec{padding:14px 0;border-top:1px solid var(--bd)}.a-sec h4{margin:0 0 2px;font:500 15px "Noto Sans Thai",sans-serif;color:var(--hd)}.a-sec p{margin:0}body.adm .a-sec>input{margin-top:8px}
+.a-inl{display:flex;gap:8px;margin-top:8px}.a-inl input{flex:1;min-width:0}
+.a-chips{display:flex;gap:8px;margin-bottom:14px}.a-chips span{padding:4px 12px;border-radius:999px;background:var(--bl);color:var(--hd);font-size:13px}
+.icg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.icb{height:42px;display:flex;align-items:center;justify-content:center;border:1px solid var(--bd);border-radius:10px;background:var(--paper);color:var(--tx);cursor:pointer}.icb.on{border-color:var(--ap);background:var(--bl);color:var(--hd);box-shadow:inset 0 0 0 1px var(--ap)}
+.a-login{min-height:70vh;display:flex;align-items:center;justify-content:center}
+.a-lp{width:100%;max-width:360px;padding:28px;text-align:center;background:var(--paper);border:1px solid var(--bd);border-radius:16px}
+.a-lock{width:52px;height:52px;margin-bottom:10px;display:inline-flex;align-items:center;justify-content:center;border-radius:14px;background:var(--bl);color:var(--p2)}
+.a-lp h1{margin:0 0 4px;font-size:22px}.a-lp .fld{margin:16px 0;text-align:left}.a-lp a{color:var(--hd)}
+@media(min-width:901px){.a-grid2{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}}
+@media(max-width:1100px){.a-split{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:900px){
+.a-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.a-shell{grid-template-columns:minmax(0,1fr);gap:14px}
+.a-side{top:env(safe-area-inset-top,0px);z-index:6;padding:8px;border-radius:14px}
+.a-logo,.a-foot{display:none}
+.a-nav{flex-direction:row;gap:4px;overflow-x:auto;scrollbar-width:none}.a-ni{width:auto;flex:none;white-space:nowrap}
+.m-only{display:flex}}
+@media(prefers-reduced-motion:reduce){body.adm *{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header id="hd"></header>
+<nav id="nv"></nav>
+<main id="app"></main>
+<div id="modal"><div id="mb"></div></div>
+<div id="toast"></div>
+<script>
+/* ===== ตั้งค่า LINE Login จริง: ใส่ LIFF ID จาก LINE Developers ที่นี่ (ว่าง = โหมดทดลอง) ===== */
+const LIFF_ID='';
+const K='lw_db_v5',$=s=>document.querySelector(s);
+const IC={home:'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z M9 22V12h6v10',wheel:'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z M12 2v20 M2 12h20 M5 5l14 14 M19 5L5 19',msg:'M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z',user:'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2 M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0z',star:'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z',gift:'M20 12v10H4V12 M2 7h20v5H2z M12 22V7 M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z',heart:'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z',tag:'M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z M7 7h.01',truck:'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M7.5 21a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z M18.5 21a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z',sparkle:'M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z M19 17v4 M17 19h4',ticket:'M2 9a3 3 0 0 1 0 6v3h20v-3a3 3 0 0 1 0-6V6H2z M13 6v12',smile:'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z M8 14s1.5 2 4 2 4-2 4-2 M9 9h.01 M15 9h.01',lock:'M5 11h14v10H5z M8 11V7a4 4 0 0 1 8 0v4',plus:'M12 5v14 M5 12h14',cam:'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z M16 13a4 4 0 1 1-8 0 4 4 0 0 1 8 0z',scroll:'M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4 M19 17V5a2 2 0 0 0-2-2H4',grid:'M3 3h7v7H3z M14 3h7v7h-7z M14 14h7v7h-7z M3 14h7v7H3z',users:'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M23 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75',sliders:'M4 21v-7 M4 10V3 M12 21v-9 M12 8V3 M20 21v-5 M20 12V3 M1 14h6 M9 8h6 M17 16h6',clock:'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z M12 6v6l4 2',list:'M8 6h13 M8 12h13 M8 18h13 M3 6h.01 M3 12h.01 M3 18h.01',search:'M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16z M21 21l-4.35-4.35',trash:'M3 6h18 M8 6V4h8v2 M19 6l-1 14H6L5 6 M10 11v6 M14 11v6'};
+const PR=['gift','ticket','star','heart','truck','tag','sparkle','smile'],PN={gift:'ของขวัญ',ticket:'คูปอง',star:'ดาว',heart:'หัวใจ',truck:'ส่งฟรี',tag:'ป้ายลด',sparkle:'ประกาย',smile:'ยิ้ม'};
+const ic=(n,s,c,f)=>`<svg width="s||20"height="{s||20}" viewBox="0 0 24 24" fill="f||'none'"stroke="{c||'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="${IC[n]}"/></svg>`;
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=t=>new Date(t).toLocaleString('th-TH',{dateStyle:'short',timeStyle:'short'});
+const seed=()=>({pin:'1234',rules:{baht:100,perSpin:10,spinAmt:1000},
+prizes:[{id:1,name:'ส่วนลด 50 บาท',ic:'ticket',color:'#ffc2d4',weight:20,stock:-1},{id:2,name:'ขอบคุณที่ร่วมสนุก',ic:'smile',color:'#fff1f4',weight:40,stock:-1},{id:3,name:'แต้มโบนัส 5',ic:'star',color:'#ff9db9',weight:20,stock:-1},{id:4,name:'สติกเกอร์น่ารัก',ic:'heart',color:'#ffd9e3',weight:12,stock:50},{id:5,name:'ของพรีเมียม',ic:'gift',color:'#f7b0c8',weight:4,stock:3},{id:6,name:'ส่งฟรี',ic:'truck',color:'#ffe6ed',weight:14,stock:-1}],
+members:[{id:'U1001',name:'มินท์',pic:null,points:35,spins:1,t:Date.now()-864e5*9},{id:'U1002',name:'พีช',pic:null,points:12,spins:0,t:Date.now()-864e5*3}],
+plog:[{uid:'U1001',d:40,note:'ซื้อสินค้า 4,000 บาท',t:Date.now()-864e5*5},{uid:'U1001',d:-10,note:'แลกสิทธิ์หมุน',t:Date.now()-864e5*4},{uid:'U1002',d:12,note:'ซื้อสินค้า 1,200 บาท',t:Date.now()-864e5*2}],
+slog:[{uid:'U1001',prize:'ส่งฟรี',ic:'truck',t:Date.now()-864e5*4}],
+reviews:[{id:1,uid:'U1001',stars:5,text:'ของดีมาก ส่งไว แอดมินน่ารักสุด ๆ ค่ะ',img:null,t:Date.now()-864e5*6,hidden:false},{id:2,uid:'U1002',stars:4,text:'วงล้อสนุกดี ได้รางวัลด้วย จะกลับมาอีกนะ',img:null,t:Date.now()-864e5*2,hidden:false}],ses:null,adm:false,codes:[{id:1,code:'WELCOME5',pts:5,max:0,exp:0,on:true,used:[],t:Date.now()}]});
+let DB=null;try{DB=JSON.parse(localStorage.getItem(K))}catch(e){}if(!DB||!DB.rules)DB=seed();if(!DB.codes)DB.codes=[];
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(DB))}catch(e){toast('พื้นที่จัดเก็บเต็ม ลองลบรีวิวที่มีรูป')}};
+const me=()=>DB.members.find(m=>m.id===DB.ses),mem=id=>DB.members.find(m=>m.id===id);
+let tmp={},busy=false,rot=0,atab='o',onlyMine=false,liffOK=false;
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),2200)}
+function modal(h){('#mb').innerHTML=h;('#modal').classList.add('on')}
+function closeM(){$('#modal').classList.remove('on')}
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeM()});
+function ask(msg,fn){tmp.cf=fn;modal(`<h2>ยืนยัน</h2><p>${esc(msg)}</p><div class="row sp"><button class="btn o" onclick="closeM()">ยกเลิก</button><button class="btn d" onclick="closeM();tmp.cf()">ยืนยัน</button></div>`)}
+const go=h=>{location.hash=h};
+function secret(){tmp.sc=(tmp.sc||0)+1;clearTimeout(tmp.sh);tmp.sh=setTimeout(()=>tmp.sc=0,1500);if(tmp.sc>=3){tmp.sc=0;go('admin')}}
+const CF=()=>Array.from({length:18},(_,i)=>`<i class="cfi" style="left:i*5.5+2%;background:{['#ff9db9','#ffc2d4','#ffd9a8','#e8c6e0','#fff0c9'][i%5]};animation-delay:${(i%6)*.09}s"></i>`).join('');
+const av=(m,s)=>{s=s||40;const st=`width:spx;height:{s}px`;return m&&m.pic?`<img class="av" style="st"src="{m.pic}" alt="">`:`<span class="av" style="st">{esc((m&&m.name||'?').charAt(0))}</span>`};
+const stars=n=>`<span style="display:inline-flex;gap:1px;vertical-align:middle">${[1,2,3,4,5].map(i=>ic('star',15,'var(--y)',i<=n?'var(--y)':'none')).join('')}</span>`;
+function compress(file,max){return new Promise((ok,no)=>{const fr=new FileReader();fr.onerror=no;fr.onload=()=>{const im=new Image();im.onerror=no;im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',.7))};im.src=fr.result};fr.readAsDataURL(file)})}
+async function pick(inp,key,pv,max){const f=inp.files[0];if(!f)return;if(!f.type.startsWith('image/')){toast('กรุณาเลือกไฟล์รูปภาพ');inp.value='';return}
+try{const d=await compress(f,max);tmp[key]=d;const p=$('#'+pv);p.src=d;p.style.display='block';toast('บีบอัดรูปแล้ว ('+Math.round(d.length*.75/1024)+' KB)')}catch(e){toast('อ่านรูปไม่สำเร็จ')}}
+function clrImg(key,pv,fid){tmp[key]=null;('#'+pv).style.display='none';('#'+fid).value=''}
+/* ---------- LINE Login ---------- */
+function lineIn(id,name,pic){let m=mem(id);if(!m){m={id,name,pic:pic||null,points:0,spins:0,t:Date.now()};DB.members.push(m)}else{m.name=name;if(pic)m.pic=pic}DB.ses=id;save()}
+async function initLine(){if(!LIFF_ID)return;try{await new Promise((ok,no)=>{const s=document.createElement('script');s.src='https://static.line-scdn.net/liff/edge/2/sdk.js';s.onload=ok;s.onerror=no;document.head.appendChild(s)});await liff.init({liffId:LIFF_ID});liffOK=true;if(liff.isLoggedIn()){const p=await liff.getProfile();lineIn(p.userId,p.displayName,p.pictureUrl)}}catch(e){toast('เชื่อมต่อ LINE ไม่สำเร็จ ตรวจสอบ LIFF ID และโดเมน')}render()}
+function loginM(){if(LIFF_ID){if(!liffOK)return toast('กำลังเชื่อมต่อ LINE กรุณารอสักครู่');return liff.login({redirectUri:location.href.split('#')[0]})}
+tmp.lp=null;modal(`<h2>เข้าสู่ระบบด้วย LINE</h2><div class="note">โหมดทดลอง: ยังไม่ได้ใส่ LIFF ID ในโค้ด จึงจำลองการล็อกอิน ใช้ ID เดิมจะเข้าบัญชีเดิม (ตัวอย่าง U1001, U1002)</div>
+<label>LINE User ID</label><input id="lid" value="U1001" maxlength="30"><label>ชื่อโปรไฟล์ (ใช้เมื่อสร้างบัญชีใหม่)</label><input id="lnm" placeholder="ชื่อของคุณ" maxlength="30">
+<label>รูปโปรไฟล์ (เลือกจากเครื่อง)</label><input type="file" id="lf" accept="image/*" onchange="pick(this,'lp','lpv',200)"><img id="lpv" class="prev" alt="">
+<div class="row sp"><button class="btn o" onclick="closeM()">ยกเลิก</button><button class="btn line" onclick="doLogin()">เข้าสู่ระบบ</button></div>`)}
+function doLogin(){const id=$('#lid').value.trim().replace(/[^A-Za-z0-9_-]/g,'');if(!id)return toast('กรอก LINE User ID');let m=mem(id);
+if(!m){const n=$('#lnm').value.trim();if(!n)return toast('บัญชีใหม่ ต้องกรอกชื่อโปรไฟล์');lineIn(id,n,tmp.lp);toast('สร้างบัญชีใหม่แล้ว')}else{if(tmp.lp)m.pic=tmp.lp;DB.ses=id;save();toast('ยินดีต้อนรับกลับ '+m.name)}closeM();render()}
+function logout(){DB.ses=null;save();if(liffOK&&liff.isLoggedIn())liff.logout();toast('ออกจากระบบแล้ว');go('home');render()}
+/* ---------- points ---------- */
+function redeem(){const m=me();if(!m)return loginM();const c=DB.rules.perSpin;if(m.points<c)return toast('แต้มไม่พอ ต้องใช้ '+c+' แต้ม');m.points-=c;m.spins++;DB.plog.unshift({uid:m.id,d:-c,note:'แลกสิทธิ์หมุน 1 ครั้ง',t:Date.now()});save();toast('แลกสิทธิ์หมุนสำเร็จ');render()}
+/* ---------- wheel ---------- */
+function drawWheel(){const c=$('#wc');if(!c)return;const S=640,x=c.getContext('2d'),n=DB.prizes.length,a=2*Math.PI/n;c.width=c.height=S;x.clearRect(0,0,S,S);
+DB.prizes.forEach((p,i)=>{x.beginPath();x.moveTo(S/2,S/2);x.arc(S/2,S/2,S/2,-Math.PI/2+i*a,-Math.PI/2+(i+1)*a);x.closePath();x.fillStyle=p.color;x.fill();x.strokeStyle='#fff';x.lineWidth=3;x.stroke();
+x.save();x.translate(S/2,S/2);x.rotate(-Math.PI/2+(i+.5)*a);x.fillStyle='#6b4a52';x.textAlign='right';x.textBaseline='middle';x.font='500 24px "Noto Sans Thai",sans-serif';let t=p.name;if(t.length>12)t=t.slice(0,11)+'…';x.fillText(t,S/2-84,0);
+x.translate(S/2-72,-16);x.scale(1.35,1.35);x.strokeStyle='#8a5a66';x.lineWidth=1.8;x.lineCap='round';x.lineJoin='round';x.stroke(new Path2D(IC[p.ic]||IC.gift));x.restore()});
+
+c.style.transform=`rotate(${rot}deg)`}
+function serverSpin(uid){const m=mem(uid);if(!m||m.spins<1)return null;const pool=DB.prizes.map((p,i)=>({p,i})).filter(o=>o.p.stock!==0&&o.p.weight>0);if(!pool.length)return null;
+let r=Math.random()*pool.reduce((s,o)=>s+o.p.weight,0);const ch=pool.find(o=>(r-=o.p.weight)<0)||pool[pool.length-1];
+m.spins--;if(ch.p.stock>0)ch.p.stock--;if(/แต้มโบนัส/.test(ch.p.name)){const b=parseInt((ch.p.name.match(/\d+/)||[0])[0]);m.points+=b;DB.plog.unshift({uid,d:b,note:'โบนัสจากวงล้อ',t:Date.now()})}
+DB.slog.unshift({uid,prize:ch.p.name,ic:ch.p.ic,t:Date.now()});save();return ch.i}
+function spin(){if(busy)return;const m=me();if(!m)return loginM();if(m.spins<1)return toast('ไม่มีสิทธิ์หมุน ลองแลกแต้มก่อนนะ');
+const i=serverSpin(m.id);if(i==null)return toast('ไม่มีรางวัลเหลือในวงล้อ ติดต่อแอดมิน');busy=true;const b=$('#sb');if(b)b.disabled=true;
+const n=DB.prizes.length,seg=360/n,cur=((rot%360)+360)%360,tgt=((360-(i+.5)*seg-cur)%360+360)%360;rot+=360*6+tgt;const c=('#wc');c.style.transition='transform4.6scubic-bezier(.12,.6,.1,1)';c.style.transform=`rotate({rot}deg)`;
+setTimeout(()=>{busy=false;const p=DB.prizes[i];modal(`<div style="text-align:center">CF()<divclass="bigi">{ic(p.ic,52,'var(--p2)')}</div><h2 style="justify-content:center">ยินดีด้วย! คุณได้รับ</h2><h2 style="justify-content:center;color:var(--p2)">${esc(p.name)}</h2><p class="mu">บันทึกผลลงประวัติแล้ว</p><button class="btn" onclick="closeM();render()">ตกลง</button></div>`)},4700)}
+/* ---------- reviews ---------- */
+function setStar(n){tmp.st=n;document.querySelectorAll('.star').forEach((b,i)=>b.innerHTML=ic('star',30,'var(--y)',i<n?'var(--y)':'none'))}
+function sendRv(){const m=me();if(!m)return loginM();const n0=rvCount(m),cd=rvCd()*36e5,gap=Date.now()-rvLast(m);
+if(n0>=rvMax())return toast('รีวิวได้สูงสุด '+rvMax()+' ครั้งต่อบัญชี LINE');
+if(n0>0&&gap<cd)return toast('รีวิวติดต่อกันไม่ได้ กรุณารออีกประมาณ '+Math.ceil((cd-gap)/36e5)+' ชั่วโมง');const t=$('#rt').value.trim();if(!tmp.st)return toast('กรุณาให้คะแนนดาว');if(!t)return toast('กรุณาเขียนความคิดเห็น');
+DB.reviews.unshift({id:Date.now(),uid:m.id,stars:tmp.st,text:t.slice(0,500),img:tmp.ri||null,t:Date.now(),hidden:false});tmp.st=0;tmp.ri=null;const R=rvPts(),g=R>0?R:0;m.rvn=n0+1;m.rvT=Date.now();
+if(g){m.points+=g;DB.plog.unshift({uid:m.id,d:g,note:'รีวิวร้านค้า ครั้งที่ '+(n0+1),t:Date.now()})}
+save();toast(g?`ส่งรีวิวแล้ว ได้รับ ${g} แต้ม`:'ส่งรีวิวแล้ว ขอบคุณค่ะ');render()}
+function delRv(id){DB.reviews=DB.reviews.filter(r=>r.id!==id);save();toast('ลบรีวิวแล้ว');render()}
+function hideRv(id){const r=DB.reviews.find(r=>r.id===id);r.hidden=!r.hidden;save();render()}
+const rvPts=()=>DB.rules.rv==null?1:DB.rules.rv,rvMax=()=>DB.rules.rvMax==null?3:DB.rules.rvMax,rvCd=()=>DB.rules.rvCd==null?24:DB.rules.rvCd;
+const rvCount=m=>Math.max(m.rvn||0,DB.reviews.filter(r=>r.uid===m.id).length),rvLast=m=>Math.max(m.rvT||0,...DB.reviews.filter(r=>r.uid===m.id).map(r=>r.t));
+const vis=()=>DB.reviews.filter(r=>!r.hidden),avg=()=>{const v=vis();return v.length?(v.reduce((s,r)=>s+r.stars,0)/v.length):0};
+function rvHtml(r,adm){const m=mem(r.uid);return `<div class="rvadm&&r.hidden?'off':''"><divclass="row">{av(m,36)}<div style="flex:1;min-width:0"><b>${esc(m?m.name:'สมาชิก')}</b> stars(r.stars)<divclass="mu">{fmt(r.t)}r.hidden?'·ซ่อนอยู่':''</div></div>{adm?`<button class="btn s o" onclick="hideRv(r.id)">{r.hidden?'แสดง':'ซ่อน'}</button><button class="btn s dl" aria-label="ลบรีวิว" onclick="ask('ลบรีวิวนี้?',()=>delRv(r.id))">{ic('trash',14)}</button>`:''}</div><p style="margin:6px 0 0">esc(r.text)</p>{r.img?`<img class="ph" src="${r.img}" alt="รูปรีวิว">`:''}</div>`}
+/* ---------- admin (เข้าที่ #admin เท่านั้น ไม่มีลิงก์ในหน้าร้าน) ---------- */
+function adLogin(){if($('#ap').value===DB.pin){DB.adm=true;save();render()}else toast('PIN ไม่ถูกต้อง')}
+function adOut(){DB.adm=false;save();go('home');render()}
+function mAdj(id){const m=mem(id);modal(`<div class="row" style="margin-bottom:12px">av(m,48)<divstyle="min-width:0"><h3style="margin:0">{esc(m.name)}</h3><div class="mu">esc(m.id)</div></div></div><divclass="a-chips"><span>แต้ม<b>{m.points}</b></span><span>สิทธิ์หมุน <b>${m.spins}</b></span></div>
+<div class="a-sec"><h4>บันทึกยอดซื้อ</h4><p class="mu">ระบบคำนวณแต้มและสิทธิ์หมุนให้อัตโนมัติ</p><div class="a-inl"><input id="a3" type="number" min="0" placeholder="ยอดซื้อ (บาท) เช่น 1500" aria-label="ยอดซื้อ (บาท)"><button class="btn" onclick="addBuy('${m.id}')">บันทึก</button></div></div>
+<div class="a-sec"><h4>เพิ่ม/ลดแต้ม</h4><p class="mu">ใส่ค่าติดลบเพื่อลดแต้ม</p><div class="a-inl"><input id="a1" type="number" placeholder="เช่น 10 หรือ -5" aria-label="จำนวนแต้ม"><button class="btn" onclick="adjP('${m.id}')">บันทึก</button></div><input id="a2" placeholder="หมายเหตุ (ไม่บังคับ)" aria-label="หมายเหตุ"></div>
+<div class="a-sec"><h4>เพิ่ม/ลดสิทธิ์หมุน</h4><div class="a-inl"><input id="a4" type="number" placeholder="เช่น 1 หรือ -1" aria-label="จำนวนสิทธิ์"><button class="btn" onclick="adjS('${m.id}')">บันทึก</button></div></div>
+<div class="row sp" style="border-top:1px solid var(--bd);padding-top:14px"><button class="btn s dl" onclick="ask('ลบสมาชิกนี้?',()=>delMem('${m.id}'))">ลบสมาชิก</button><button class="btn s o" onclick="closeM()">ปิด</button></div>`)}
+function delMem(id){DB.members=DB.members.filter(x=>x.id!==id);if(DB.ses===id)DB.ses=null;save();toast('ลบสมาชิกแล้ว');render()}
+function adjP(id){const m=mem(id),d=parseInt($('#a1').value);if(!d)return toast('กรอกจำนวนแต้ม');m.points=Math.max(0,m.points+d);DB.plog.unshift({uid:id,d,note:$('#a2').value.trim()||'แอดมินปรับแต้ม',t:Date.now()});save();closeM();toast('ปรับแต้มแล้ว');render()}
+function addBuy(id){const m=mem(id),a=parseFloat($('#a3').value),R=DB.rules;if(!(a>0))return toast('กรอกยอดซื้อ');const p=Math.floor(a/R.baht),s=R.spinAmt>0?Math.floor(a/R.spinAmt):0;m.points+=p;m.spins+=s;DB.plog.unshift({uid:id,d:p,note:'ซื้อสินค้า '+a.toLocaleString()+' บาท'+(s?' (+'+s+' สิทธิ์หมุน)':''),t:Date.now()});save();closeM();toast(`ได้ ${p} แต้ม, ${s} สิทธิ์หมุน`);render()}
+function adjS(id){const m=mem(id),d=parseInt($('#a4').value);if(!d)return toast('กรอกจำนวนสิทธิ์');m.spins=Math.max(0,m.spins+d);save();closeM();toast('ปรับสิทธิ์แล้ว');render()}
+
+const DT=['เข้าสู่ระบบด้วย LINE ไม่ต้องสมัครสมาชิก','ซื้อสินค้าทุก {baht} บาท ได้ 1 แต้ม','ใช้ {perSpin} แต้ม แลกสิทธิ์หมุน 1 ครั้ง','ยอดซื้อทุก {spinAmt} บาท รับสิทธิ์หมุน 1 ครั้งทันที','เขียนรีวิวได้สูงสุด {rvMax} ครั้งต่อบัญชี LINE เว้นอย่างน้อย {rvCd} ชม. ระหว่างรีวิว และรับ {rv} แต้มทุกครั้ง','มีโค้ดแจกแต้มจากทางร้าน นำมากรอกรับแต้มได้เอง (โค้ดละ 1 ครั้งต่อบัญชี)','ร้านเป็นผู้บันทึกยอดซื้อและแต้มให้สมาชิก','ผลรางวัลสุ่มและบันทึกโดยระบบ ไม่สามารถแก้ไขได้'],DTT='เงื่อนไขการเข้าร่วมกิจกรรม';
+const termsList=()=>Array.isArray(DB.terms)?DB.terms:DT;
+const termTx=t=>{const R=DB.rules,v={baht:R.baht.toLocaleString(),perSpin:R.perSpin,spinAmt:R.spinAmt.toLocaleString(),rv:rvPts(),rvMax:rvMax(),rvCd:rvCd()};return esc(t).replace(/\{(\w+)\}/g,(a,k)=>k in v?v[k]:a)};
+const termsHtml=()=>{const l=termsList();return l.length||DB.termsTitle?`<div class="card"><h2>esc(DB.termsTitle==null?DTT:DB.termsTitle)</h2><ulstyle="margin:0;padding-left:20px">{l.map(t=>`<li>${termTx(t)}</li>`).join('')}</ul></div>`:''};
+function saveTerms(){DB.terms=$('#tt').value.split('\n').map(x=>x.trim()).filter(Boolean);DB.termsTitle=$('#tn').value.trim();save();toast('บันทึกข้อความเงื่อนไขแล้ว');render()}
+function resetTerms(){delete DB.terms;delete DB.termsTitle;save();toast('กลับเป็นข้อความเดิมแล้ว');render()}
+function saveRules(){const b=parseInt(('#r1').value),p=parseInt(('#r2').value),s=parseInt(('#r3').value),pin=('#r4').value.trim(),v=parseInt(('#r5').value),mx=parseInt(('#r6').value),cd=parseInt($('#r7').value);if(!(b>0)||!(p>0)||!(s>=0)||!(v>=0)||!(mx>=1)||!(cd>=0)||pin.length<4)return toast('กรอกค่าให้ถูกต้อง (PIN อย่างน้อย 4 ตัว)');DB.rules={baht:b,perSpin:p,spinAmt:s,rv:v,rvMax:mx,rvCd:cd};DB.pin=pin;save();toast('บันทึกเงื่อนไขแล้ว');render()}
+function prM(id){const p=DB.prizes.find(x=>x.id===id)||{name:'',ic:'gift',color:'#ffc2d4',weight:10,stock:-1};modal(`<h3 style="font-size:18px;margin:0 0 14px">id?'แก้ไข':'เพิ่ม'รางวัล</h3><divclass="fld"><labelfor="p1">ชื่อรางวัล</label><inputid="p1"value="{esc(p.name)}" maxlength="40"></div>
+<div class="fld"><label id="pil">ไอคอน</label><input type="hidden" id="p2" value="p.ic"><divclass="icg"role="radiogroup"aria-labelledby="pil">{PR.map(k=>`<button type="button" class="icbk===p.ic?'on':''"role="radio"aria-checked="{k===p.ic}" aria-label="PN[k]"title="{PN[k]}" onclick="pickIc('k')">{ic(k,20)}</button>`).join('')}</div></div>
+<div class="fld"><label for="p3">สีช่องบนวงล้อ</label><input id="p3" type="color" value="${p.color}"></div>
+<div class="a-two"><div class="fld"><label for="p4">น้ำหนักโอกาส</label><input id="p4" type="number" min="0" value="p.weight"><small>ยิ่งมากยิ่งออกบ่อย</small></div><divclass="fld"><labelfor="p5">จำนวนคงเหลือ</label><inputid="p5"type="number"min="-1"value="{p.stock}"><small>-1 = ไม่จำกัด</small></div></div>
+<div class="row sp"><button class="btn o" onclick="closeM()">ยกเลิก</button><button class="btn" onclick="savePr(${id||0})">บันทึก</button></div>`)}
+function pickIc(k){$('#p2').value=k;document.querySelectorAll('.icb').forEach(b=>{const on=b.getAttribute('aria-label')===PN[k];b.classList.toggle('on',on);b.setAttribute('aria-checked',on)})}
+function savePr(id){const o={name:('#p1').value.trim(),ic:('#p2').value,color:('#p3').value,weight:parseInt(('#p4').value),stock:parseInt($('#p5').value)};if(!o.name||isNaN(o.weight)||o.weight<0||isNaN(o.stock)||o.stock<-1)return toast('กรอกข้อมูลให้ครบถ้วน');
+if(id)Object.assign(DB.prizes.find(x=>x.id===id),o);else{if(DB.prizes.length>=12)return toast('มีรางวัลได้สูงสุด 12 ช่อง');DB.prizes.push({id:Date.now(),...o})}save();closeM();render()}
+function delPr(id){if(DB.prizes.length<=2)return toast('ต้องมีอย่างน้อย 2 รางวัล');DB.prizes=DB.prizes.filter(x=>x.id!==id);save();toast('ลบรางวัลแล้ว');render()}
+function resetAll(){DB=seed();save();rot=0;toast('รีเซ็ตแล้ว');render()}
+/* ---------- โค้ดแจกแต้ม ---------- */
+const gen=()=>{const a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',r=new Uint8Array(8);crypto.getRandomValues(r);return Array.from(r,x=>a[x%a.length]).join('')};
+const codeBox=()=>`<div class="card"><h2>กรอกโค้ดรับแต้ม</h2><div class="row"><input id="cd" placeholder="กรอกโค้ดที่ได้รับจากร้าน" maxlength="30" style="margin:0;text-transform:uppercase" onkeydown="if(event.key==='Enter')useCode()"><button class="btn" onclick="useCode()">รับแต้ม</button></div></div>`;
+function useCode(){const m=me();if(!m)return loginM();
+if(tmp.lock&&Date.now()<tmp.lock)return toast('กรอกผิดหลายครั้ง กรุณารอ '+Math.ceil((tmp.lock-Date.now())/1e3)+' วินาที');
+const v=($('#cd').value||'').trim().toUpperCase().replace(/[^A-Z0-9-]/g,'');if(!v)return toast('กรุณากรอกโค้ด');
+const c=DB.codes.find(x=>x.code===v),bad=t=>{tmp.fails=(tmp.fails||0)+1;if(tmp.fails>=5){tmp.lock=Date.now()+6e4;tmp.fails=0}toast(t)};
+if(!c)return bad('ไม่พบโค้ดนี้');if(!c.on)return bad('โค้ดนี้ปิดใช้งานแล้ว');if(c.exp&&Date.now()>c.exp)return bad('โค้ดนี้หมดอายุแล้ว');
+if(c.used.some(u=>u.uid===m.id))return toast('คุณใช้โค้ดนี้ไปแล้ว');if(c.max&&c.used.length>=c.max)return bad('โค้ดนี้ถูกใช้ครบแล้ว');
+c.used.push({uid:m.id,t:Date.now()});m.points+=c.pts;DB.plog.unshift({uid:m.id,d:c.pts,note:'ใช้โค้ด '+c.code,t:Date.now()});tmp.fails=0;save();
+modal(`<div style="text-align:center"><div class="bigi">ic('gift',46,'var(--p)')</div><h2>รับแต้มสำเร็จ</h2><p>ได้รับ<b>{c.pts}</b> แต้ม</p><button class="btn" onclick="closeM();render()">ตกลง</button></div>`);render()}
+function addCode(){let c=('#c1').value.trim().toUpperCase().replace(/[A-Z0-9-]/g,'');constpts=parseInt(('#c2').value),mx=parseInt(('#c3').value),ex=('#c4').value;
+if(!c)c=gen();if(DB.codes.some(x=>x.code===c))return toast('มีโค้ดนี้อยู่แล้ว');if(!(pts>0))return toast('ใส่จำนวนแต้มมากกว่า 0');if(!(mx>=0))return toast('จำนวนครั้งต้องไม่ติดลบ');
+DB.codes.unshift({id:Date.now(),code:c,pts,max:mx,exp:ex?new Date(ex+'T23:59:59').getTime():0,on:true,used:[],t:Date.now()});save();toast('สร้างโค้ด '+c+' แล้ว');render()}
+function togCode(id){const c=DB.codes.find(x=>x.id===id);c.on=!c.on;save();render()}
+function delCode(id){DB.codes=DB.codes.filter(x=>x.id!==id);save();toast('ลบโค้ดแล้ว');render()}
+function copyCode(c){try{navigator.clipboard.writeText(c).then(()=>toast('คัดลอกแล้ว: '+c),()=>toast('โค้ดคือ '+c))}catch(e){toast('โค้ดคือ '+c)}}
+function codeUsers(id){const c=DB.codes.find(x=>x.id===id);modal(`<h2>${esc(c.code)}</h2><p class="mu" style="text-align:center">ใช้แล้ว c.used.length{c.max?'/'+c.max:''} ครั้ง</p>${c.used.map(u=>`<div class="row sp" style="padding:6px 0;border-bottom:1px solid var(--bd)"><span>${esc((mem(u.uid)||{name:u.uid}).name)}</span><span class="mu">${fmt(u.t)}</span></div>`).join('')||'<p class="mu" style="text-align:center">ยังไม่มีคนใช้</p>'}<div style="margin-top:14px;text-align:center"><button class="btn s o" onclick="closeM()">ปิด</button></div>`)}
+const AT=[['o','grid','ภาพรวม'],['m','users','สมาชิก'],['r','sliders','เงื่อนไข'],['c','ticket','โค้ดแจกแต้ม'],['p','gift','รางวัล'],['h','clock','ประวัติหมุน'],['l','list','ประวัติแต้ม'],['v','msg','รีวิว']];
+const AD={o:['ภาพรวม','สรุปสถานะระบบและกิจกรรมล่าสุด'],m:['สมาชิก','ค้นหา บันทึกยอดซื้อ และปรับแต้มให้สมาชิก'],r:['เงื่อนไขกิจกรรม','กำหนดวิธีได้แต้มและแลกสิทธิ์หมุน'],c:['โค้ดแจกแต้ม','สร้างโค้ดให้ลูกค้านำไปกรอกรับแต้ม'],p:['รางวัลในวงล้อ','ปรับรางวัล โอกาสที่จะออก และจำนวนคงเหลือ'],h:['ประวัติการหมุน','ผลการหมุนวงล้อของสมาชิกทั้งหมด'],l:['ประวัติแต้ม','การได้รับและใช้แต้มของสมาชิกทั้งหมด'],v:['รีวิว','ซ่อนหรือลบรีวิวที่ไม่เหมาะสม']};
+const atCnt=k=>({m:DB.members.length,c:DB.codes.length,p:DB.prizes.length,v:DB.reviews.length})[k];
+const nm=id=>esc((mem(id)||{name:id}).name);
+const fld=(id,l,v,h,mn)=>`<div class="fld"><label for="id">{l}</label><input id="id"type="number"min="{mn}" value="v">{h?`<small>${h}</small>`:''}</div>`;
+const aStat=(i,l,v)=>`<div class="a-stat"><span class="a-si">ic(i,18)</span><div><divclass="a-sv">{v}</div><div class="a-sl">${l}</div></div></div>`;
+const codeSt=c=>!c.on?['no','ปิดอยู่']:(c.exp&&Date.now()>c.exp)?['wn','หมดอายุ']:(c.max&&c.used.length>=c.max)?['wn','ใช้ครบแล้ว']:['ok','ใช้ได้'];
+const tbl=(h,rows,n)=>`<div class="a-tbl"><table><thead><tr>h</tr></thead><tbody>{rows||`<tr><td colspan="${n}" class="a-empty">ยังไม่มีข้อมูล</td></tr>`}</tbody></table></div>`;
+function fMem(q){q=q.trim().toLowerCase();let n=0;document.querySelectorAll('#mt tbody tr').forEach(r=>{const h=!r.dataset.s.includes(q);r.hidden=h;if(!h)n++});$('#mE').hidden=n>0}
+function ovHtml(){const M=DB.members,sum=k=>M.reduce((s,m)=>s+m[k],0).toLocaleString();
+const feed=[...DB.plog.map(x=>({t:x.t,u:x.uid,tx:x.note,r:(x.d>0?'+':'')+x.d+' แต้ม',c:x.d>0?'pos':'neg'})),...DB.slog.map(x=>({t:x.t,u:x.uid,tx:'หมุนได้ '+x.prize,r:'',c:''}))].sort((a,b)=>b.t-a.t).slice(0,8);
+return `<div class="a-stats">aStat('users','สมาชิกทั้งหมด',M.length){aStat('star','แต้มที่สมาชิกถืออยู่',sum('points'))}aStat('wheel','สิทธิ์หมุนที่ยังไม่ใช้',sum('spins')){aStat('gift','หมุนไปแล้ว (ครั้ง)',DB.slog.length)}aStat('ticket','โค้ดที่ใช้ได้',DB.codes.filter(c=>codeSt(c)[0]==='ok').length){aStat('msg','รีวิวทั้งหมด',DB.reviews.length)}</div>
+<div class="a-panel"><h3>กิจกรรมล่าสุด</h3><ul class="a-feed">${feed.map(f=>`<li>${av(mem(f.u),32)}<div style="flex:1;min-width:0"><b>nm(f.u)</b><spanclass="mu">{esc(f.tx)}</span></div><div style="text-align:right"><div class="f.c">{f.r}</div><div class="mu">${fmt(f.t)}</div></div></li>`).join('')||'<li class="a-empty">ยังไม่มีกิจกรรม</li>'}</ul></div>`}
+function memHtml(){return `<div class="a-panel flush"><div class="a-tool"><div class="a-search">${ic('search',16)}<input type="search" placeholder="ค้นหาชื่อหรือ LINE ID" aria-label="ค้นหาสมาชิก" oninput="fMem(this.value)"></div><span class="mu">สมาชิก ${DB.members.length} คน</span></div>
+<div class="a-tbl"><table id="mt"><thead><tr><th>สมาชิก</th><th>เข้าร่วม</th><th class="num">แต้ม</th><th class="num">สิทธิ์หมุน</th><th></th></tr></thead><tbody>${DB.members.map(m=>`<tr data-s="${esc((m.name+' '+m.id).toLowerCase())}"><td><div class="row">av(m,34)<div><b>{esc(m.name)}</b><div class="mu">esc(m.id)</div></div></div></td><tdclass="mu">{new Date(m.t).toLocaleDateString('th-TH',{dateStyle:'medium'})}</td><td class="num">m.points</td><tdclass="num">{m.spins}</td><td style="text-align:right"><button class="btn s" onclick="mAdj('${m.id}')">จัดการ</button></td></tr>`).join('')}</tbody></table></div>
+<p id="mE" class="a-empty" DB.members.length?'hidden':''>{DB.members.length?'ไม่พบสมาชิกที่ค้นหา':'ยังไม่มีสมาชิก สมาชิกจะถูกสร้างเมื่อเข้าสู่ระบบด้วย LINE ครั้งแรก'}</p></div>`}
+function rulesHtml(){const R=DB.rules;return `<div class="a-fgrid"><div class="a-panel"><h3>การได้แต้มและสิทธิ์หมุน</h3><p class="mu">ลูกค้าต้องซื้อเท่าไรจึงได้แต้ม และใช้กี่แต้มแลกสิทธิ์หมุน</p>fld('r1','ซื้อกี่บาทได้1แต้ม',R.baht,'เช่น100=ซื้อ100บาทได้1แต้ม',1){fld('r2','ใช้กี่แต้มแลก 1 สิทธิ์หมุน',R.perSpin,'',1)}${fld('r3','ยอดซื้อกี่บาทได้ 1 สิทธิ์หมุนทันที',R.spinAmt,'ใส่ 0 เพื่อปิดสิทธิ์นี้',0)}</div>
+<div class="a-panel"><h3>รีวิวจากลูกค้า</h3><p class="mu">กำหนดแต้มที่แจก และกันการรีวิวซ้ำติดกัน</p>fld('r5','แต้มที่ได้ต่อการรีวิว1ครั้ง',rvPts(),'ใส่0เพื่อไม่แจกแต้ม',0){fld('r6','รีวิวได้สูงสุดต่อ 1 บัญชี LINE (ครั้ง)',rvMax(),'',1)}${fld('r7','ต้องเว้นระหว่างรีวิวกี่ชั่วโมง',rvCd(),'ใส่ 0 เพื่อไม่จำกัด',0)}</div>
+<div class="a-panel"><h3>ความปลอดภัย</h3><p class="mu">PIN ใช้เข้าหลังบ้านนี้</p><div class="fld"><label for="r4">PIN แอดมิน</label><input id="r4" value="${esc(DB.pin)}" autocomplete="off"><small>อย่างน้อย 4 ตัว</small></div></div></div>
+<div class="a-panel"><h3>ข้อความเงื่อนไขบนหน้าแรก</h3><p class="mu">แก้ไขได้ทั้งหมด พิมพ์ 1 ข้อต่อ 1 บรรทัด เพิ่มหรือลบบรรทัดได้อิสระ</p><div class="fld"><label for="tn">หัวข้อ</label><input id="tn" value="esc(DB.termsTitle==null?DTT:DB.termsTitle)"maxlength="80"></div><divclass="fld"><labelfor="tt">รายการเงื่อนไข</label><textareaid="tt"rows="10"style="line-height:1.6">{esc(termsList().join('\n'))}</textarea><small>ใส่ตัวแทนเพื่อให้ตัวเลขเปลี่ยนตามการตั้งค่าด้านบนอัตโนมัติ: {baht} {perSpin} {spinAmt} {rv} {rvMax} {rvCd}</small></div><div class="row sp wrap"><button class="btn s o" onclick="ask('กลับไปใช้ข้อความเงื่อนไขเดิม?',resetTerms)">คืนค่าเดิม</button><button class="btn" onclick="saveTerms()">บันทึกข้อความ</button></div></div>
+<div class="a-save"><button class="btn" onclick="saveRules()">บันทึกการตั้งค่า</button></div>
+<div class="a-panel a-danger"><div class="row sp wrap"><div><h3 style="margin:0">รีเซ็ตข้อมูล</h3><p class="mu" style="margin:2px 0 0">ลบข้อมูลทั้งหมดและกลับเป็นข้อมูลตัวอย่าง ย้อนกลับไม่ได้</p></div><button class="btn s dl" onclick="ask('รีเซ็ตข้อมูลทั้งหมดกลับเป็นข้อมูลตัวอย่าง?',resetAll)">รีเซ็ตเป็นข้อมูลตัวอย่าง</button></div></div>`}
+function codesHtml(){return `<div class="a-split"><div class="a-panel"><h3>สร้างโค้ดใหม่</h3><p class="mu">สมาชิก 1 บัญชี LINE ใช้โค้ดเดียวกันได้ 1 ครั้ง</p>
+<div class="fld"><label for="c1">โค้ด</label><input id="c1" maxlength="30" placeholder="เช่น WELCOME5" style="text-transform:uppercase"><small>เว้นว่างเพื่อให้ระบบสุ่มให้</small></div>
+<div class="a-two"><div class="fld"><label for="c2">แต้มที่ได้</label><input id="c2" type="number" min="1" value="5"></div><div class="fld"><label for="c3">ใช้ได้กี่ครั้ง</label><input id="c3" type="number" min="0" value="1"><small>0 = ไม่จำกัด</small></div></div>
+<div class="fld"><label for="c4">วันหมดอายุ</label><input id="c4" type="date"><small>เว้นว่างถ้าไม่มีวันหมดอายุ</small></div><button class="btn" style="width:100%" onclick="addCode()">สร้างโค้ด</button></div>
+<div class="a-panel flush">${tbl('<th>โค้ด</th><th class="num">แต้ม</th><th class="num">ใช้แล้ว</th><th>หมดอายุ</th><th>สถานะ</th><th></th>',DB.codes.map(c=>{const s=codeSt(c);return `<tr><td><b class="code">${esc(c.code)}</b></td><td class="num">c.pts</td><tdclass="num">{c.used.length}c.max?'/'+c.max:''</td><td>{c.exp?new Date(c.exp).toLocaleDateString('th-TH'):'-'}</td><td><span class="bdg s[0]">{s[1]}</span></td><td><div class="row" style="justify-content:flex-end"><button class="btn s o" onclick="copyCode('c.code')">คัดลอก</button><buttonclass="btnso"onclick="codeUsers({c.id})">ผู้ใช้</button><button class="swc.on?'on':''"role="switch"aria-checked="{!!c.on}" aria-label="เปิดใช้โค้ด esc(c.code)"onclick="togCode({c.id})"></button><button class="btn s dl" aria-label="ลบโค้ด esc(c.code)"onclick="ask('ลบโค้ดนี้?',()=>delCode({c.id}))">${ic('trash',14)}</button></div></td></tr>`}).join(''),6)}</div></div>`}
+function prHtml(){const tw=DB.prizes.filter(p=>p.stock!==0&&p.weight>0).reduce((s,p)=>s+p.weight,0);
+return `<div class="a-cards">${DB.prizes.map(p=>{const out=p.stock===0,ch=!out&&tw?Math.round(p.weight/tw*1000)/10:0;return `<div class="a-pc${out?' out':''}"><div class="row"><span class="a-sw" style="background:esc(p.color)">{ic(p.ic,22)}</span><div style="min-width:0;flex:1"><b>esc(p.name)</b><divclass="mu">{out?'ของหมดแล้ว':p.stock<0?'จำนวนไม่จำกัด':'เหลือ '+p.stock+' ชิ้น'}</div></div></div><div><div class="row sp mu"><span>โอกาสออก</span><b>ch%</b></div><divclass="a-bar"><istyle="width:{ch}%"></i></div></div><div class="row"><button class="btn s o" style="flex:1" onclick="prM(${p.id})">แก้ไข</button><button class="btn s dl" aria-label="ลบรางวัล esc(p.name)"onclick="ask('ลบรางวัลนี้?',()=>delPr({p.id}))">${ic('trash',14)}</button></div></div>`}).join('')}</div>`}
+const histHtml=()=>`<div class="a-panel flush"><div class="a-tool"><span class="mu">ทั้งหมด DB.slog.lengthครั้ง</span></div>{tbl('<th>เวลา</th><th>สมาชิก</th><th>รางวัลที่ได้</th>',DB.slog.map(s=>`<tr><td class="mu">fmt(s.t)</td><td>{nm(s.uid)}</td><td><span class="row">ic(s.ic||'gift',16,'var(--p2)'){esc(s.prize)}</span></td></tr>`).join(''),3)}</div>`;
+const ledgerHtml=()=>`<div class="a-panel flush"><div class="a-tool"><span class="mu">ทั้งหมด DB.plog.lengthรายการ</span></div>{tbl('<th>เวลา</th><th>สมาชิก</th><th>หมายเหตุ</th><th class="num">แต้ม</th>',DB.plog.map(s=>`<tr><td class="mu">fmt(s.t)</td><td>{nm(s.uid)}</td><td>${esc(s.note)}</td><td class="num s.d>0?'pos':'neg'">{s.d>0?'+':''}${s.d}</td></tr>`).join(''),4)}</div>`;
+const revHtml=()=>`<div class="a-revs">${DB.reviews.map(r=>rvHtml(r,true)).join('')||'<div class="a-panel a-empty">ยังไม่มีรีวิว</div>'}</div>`;
+function adminHtml(){if(!DB.adm)return `<div class="a-login"><div class="a-lp"><span class="a-lock">${ic('lock',26)}</span><h1>หลังบ้านแอดมิน</h1><p class="mu">กรอก PIN เพื่อเข้าจัดการระบบ</p><div class="fld"><label for="ap">PIN</label><input id="ap" type="password" inputmode="numeric" autocomplete="current-password" onkeydown="if(event.key==='Enter')adLogin()"></div><button class="btn" style="width:100%" onclick="adLogin()">เข้าสู่ระบบ</button><div class="note" style="margin:14px 0">PIN ตัวอย่างในโหมดทดลอง: 1234</div><a href="#home">กลับหน้าร้าน</a></div></div>`;
+const body={o:ovHtml,m:memHtml,r:rulesHtml,c:codesHtml,p:prHtml,h:histHtml,l:ledgerHtml,v:revHtml}[atab](),d=AD[atab],ex=`<button class="btn s o" onclick="go('home')">กลับหน้าร้าน</button><button class="btn s o" onclick="adOut()">ออกจากระบบ</button>`;
+const nav=AT.map(t=>{const n=atCnt(t[0]);return `<button class="a-niatab===t[0]?'on':''"onclick="atab='{t[0]}';render()"atab===t[0]?'aria-current="page"':''>{ic(t[1],18)}<span>t[2]</span>{n!=null?`<em>${n}</em>`:''}</button>`}).join('');
+return `<div class="a-shell"><aside class="a-side"><div class="a-logo"><b>MONALI SHOP</b><span>หลังบ้าน</span></div><div class="a-nav">nav</div><divclass="a-foot">{ex}</div></aside><section><div class="a-top"><div><h1>d[0]</h1><p>{d[1]}</p></div><div class="a-act">${atab==='p'?`<span class="mu">${DB.prizes.length}/12 ช่อง</span><button class="btn" onclick="prM(0)">+ เพิ่มรางวัล</button>`:''}<div class="a-act m-only">ex</div></div></div>{body}</section></div>`}
+
+/* ---------- pages ---------- */
+const P={
+home(){const m=me(),R=DB.rules;return `<div class="card hero"><span class="eb">MONALI SHOP</span><div class="arch"><div class="hw"></div></div><h1>หมุนวงล้อ ลุ้นรางวัล</h1><p>ซื้อครบ ${R.spinAmt.toLocaleString()} บาท หรือสะสมแต้มครบ R.perSpinแต้มรับสิทธิ์หมุนวงล้อ</p>{m?`<button class="btn" onclick="go('wheel')">ไปหมุนวงล้อ</button>`:`<button class="btn line" onclick="loginM()">เข้าสู่ระบบด้วย LINE</button>`}</div>
+${m?`<div class="card"><div class="row">${av(m,48)}<div><b>esc(m.name)</b><divclass="mu">สมาชิกLINE</div></div></div><divclass="grid"style="margin-top:12px"><divclass="stat"><b>{m.points}</b>แต้มสะสม</div><div class="stat"><b>${m.spins}</b>สิทธิ์หมุน</div></div></div>`:''}
+m?codeBox():''{termsHtml()}
+<div class="card"><div class="row sp"><h2>รีวิวจากลูกค้า</h2><a href="#reviews" class="mu">ดูทั้งหมด</a></div><div class="row">stars(Math.round(avg()))<b>{avg().toFixed(1)}</b> <span class="mu">(vis().lengthรีวิว)</span></div>{vis().slice(0,3).map(r=>rvHtml(r)).join('')||'<p class="mu">ยังไม่มีรีวิว</p>'}</div>`},
+wheel(){const m=me();return `<div class="card" style="text-align:center"><h2 style="justify-content:center">วงล้อลุ้นรางวัล</h2><div class="wheelbox"><div class="ptr"></div><canvas id="wc" style="transition:none"></canvas><div class="hub">${ic('star',24,'currentColor','currentColor')}</div></div>
+${m?`<p>แต้ม <b>${m.points}</b> · สิทธิ์หมุน <b>${m.spins}</b></p>`:'<p class="mu">เข้าสู่ระบบเพื่อหมุนวงล้อ</p>'}<div class="row wrap" style="justify-content:center"><button class="btn" id="sb" onclick="spin()">${m?'หมุนเลย':'เข้าสู่ระบบด้วย LINE'}</button>${m?`<button class="btn o" onclick="redeem()">แลก ${DB.rules.perSpin} แต้ม = 1 สิทธิ์</button>`:''}</div></div>
+<div class="card"><h3>รางวัลในวงล้อ</h3><div class="row wrap">${DB.prizes.map(p=>`<span class="chip" style="background:${p.color}">${ic(p.ic,16)} esc(p.name){p.stock===0?' (หมด)':''}</span>`).join('')}</div></div>
+${m?`<div class="card"><h3>ประวัติการหมุนของฉัน</h3>${DB.slog.filter(s=>s.uid===m.id).map(s=>`<div class="row sp" style="padding:6px 0;border-bottom:1px dashed var(--bd)"><span class="row">${ic(s.ic||'gift',18,'var(--p2)')} esc(s.prize)</span><spanclass="mu">{fmt(s.t)}</span></div>`).join('')||'<p class="mu">ยังไม่เคยหมุน</p>'}</div>`:''}`},
+reviews(){const m=me();let l=vis();if(onlyMine&&m)l=DB.reviews.filter(r=>r.uid===m.id);return `<div class="card" style="text-align:center"><div style="font-size:40px;font-weight:800;color:var(--p2)">avg().toFixed(1)</div>{stars(Math.round(avg()))}<div class="mu">จาก ${vis().length} รีวิว</div></div>
+<div class="card"><h2>เขียนรีวิว</h2><p class="mu" style="text-align:center;margin-top:-6px">${m?`รีวิวแล้ว rvCount(m)/{rvMax()} ครั้ง · `:''}${rvPts()>0?`รีวิวรับ ${rvPts()} แต้ม · `:''}เว้น rvCd()ชม.ระหว่างรีวิว</p>{m?`<div>${[1,2,3,4,5].map(n=>`<button class="star" onclick="setStar(${n})" aria-label="nดาว">{ic('star',30,'var(--y)',(tmp.st||0)>=n?'var(--y)':'none')}</button>`).join('')}</div><textarea id="rt" rows="3" maxlength="500" placeholder="เล่าประสบการณ์ของคุณ..."></textarea><label>แนบรูปภาพ (เลือกจากเครื่อง)</label><input type="file" id="rf" accept="image/*" onchange="pick(this,'ri','rpv',800)"><img id="rpv" class="prev" alt=""><div class="row"><button class="btn" onclick="sendRv()">ส่งรีวิว</button><button class="btn s o" onclick="clrImg('ri','rpv','rf')">ลบรูป</button></div>`:`<p class="mu">เข้าสู่ระบบก่อนจึงจะรีวิวได้</p><button class="btn line" onclick="loginM()">เข้าสู่ระบบด้วย LINE</button>`}</div>
+<div class="card"><div class="row sp wrap"><h2>รีวิวทั้งหมด</h2>${m?`<button class="btn s o" onclick="onlyMine=!onlyMine;render()">${onlyMine?'ดูทั้งหมด':'เฉพาะของฉัน'}</button>`:''}</div>${l.map(r=>rvHtml(r)).join('')||'<p class="mu">ยังไม่มีรีวิว</p>'}</div>`},
+me(){const m=me();if(!m)return `<div class="card" style="text-align:center"><h2 style="justify-content:center">บัญชีของฉัน</h2><p class="mu">เข้าสู่ระบบเพื่อดูแต้มและประวัติ</p><button class="btn line" onclick="loginM()">เข้าสู่ระบบด้วย LINE</button></div>`;
+return `<div class="card"><div class="row sp"><div class="row">av(m,56)<div><b>{esc(m.name)}</b><div class="mu">esc(m.id)</div></div></div><buttonclass="btnso"onclick="logout()">ออกจากระบบ</button></div><divclass="grid"style="margin-top:12px"><divclass="stat"><b>{m.points}</b>แต้มสะสม</div><div class="stat"><b>${m.spins}</b>สิทธิ์หมุน</div></div><div style="margin-top:12px"><button class="btn" onclick="redeem()">แลก ${DB.rules.perSpin} แต้ม เป็นสิทธิ์หมุน</button></div></div>
+codeBox()<divclass="card"><h3>ประวัติแต้ม</h3>{DB.plog.filter(s=>s.uid===m.id).map(s=>`<div class="row sp" style="padding:6px 0;border-bottom:1px dashed var(--bd)"><div>esc(s.note)<divclass="mu">{fmt(s.t)}</div></div><b style="color:s.d>0?'var(--g)':'#ff7a8a'">{s.d>0?'+':''}${s.d}</b></div>`).join('')||'<p class="mu">ยังไม่มีประวัติ</p>'}</div>
+<div class="card"><h3>รางวัลที่ได้รับ</h3>${DB.slog.filter(s=>s.uid===m.id).map(s=>`<div class="row sp" style="padding:6px 0;border-bottom:1px dashed var(--bd)"><span class="row">${ic(s.ic||'gift',18,'var(--p2)')} esc(s.prize)</span><spanclass="mu">{fmt(s.t)}</span></div>`).join('')||'<p class="mu">ยังไม่มีรางวัล</p>'}</div>
+<div class="card"><h3>รีวิวของฉัน</h3>${DB.reviews.filter(r=>r.uid===m.id).map(r=>rvHtml(r)).join('')||'<p class="mu">ยังไม่เคยรีวิว</p>'}</div>`},
+admin:adminHtml};
+function render(){const r=(location.hash||'#home').slice(1),k=P[r]?r:'home',m=me(),adm=k==='admin';
+document.body.classList.toggle('adm',adm);('#hd').style.display=('#nv').style.display=adm?'none':'';
+('#hd').innerHTML=`<spanclass="brand">MONALISHOP<buttonclass="sec"onclick="secret()"tabindex="-1"aria-hidden="true">{ic('sparkle',12)}</button></span>${m?`<a href="#me" class="row" style="text-decoration:none;color:inherit">${av(m,32)}<span style="font-size:13px">${m.points} แต้ม</span></a>`:`<button class="btn s line" onclick="loginM()">LINE Login</button>`}`;
+('#nv').innerHTML=[['home','home','Home'],['wheel','wheel','Wheel'],['reviews','msg','Reviews'],['me','user','Me']].map(t=>`<ahref="#{t[0]}" class="k===t[0]?'on':''">{ic(t[1],22)}${t[2]}</a>`).join('');
+$('#app').innerHTML=P[k]();if(k==='wheel')drawWheel();const sk=adm?'a:'+atab:null;if(!busy&&(!adm||render.k!==sk))window.scrollTo(0,0);render.k=sk;if(adm&&!DB.adm){const e=$('#ap');if(e)e.focus()}}
+window.addEventListener('hashchange',render);render();initLine();
+if(document.fonts)document.fonts.ready.then(()=>{if($('#wc')&&!busy)drawWheel()});
+</script>
+</body>
+</html>
+
