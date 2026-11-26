@@ -169,7 +169,7 @@ const HD={apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'applicati
 async function errOf(r){let j={};try{j=await r.json()}catch(e){}return new Error(j.message||('http_'+r.status))}
 async function rest(path){const r=await fetch(SB_URL+'/rest/v1/'+path,{headers:HD});if(!r.ok)throw await errOf(r);return r.json()}
 async function rpc(fn,args){const r=await fetch(SB_URL+'/rest/v1/rpc/'+fn,{method:'POST',headers:HD,body:JSON.stringify(args||{})});if(!r.ok)throw await errOf(r);const t=await r.text();return t?JSON.parse(t):null}
-const ERR=e=>({bad_pin:'PIN ไม่ถูกต้อง',not_enough_points:'แต้มไม่พอ ต้องใช้ '+DB.rules.perSpin+' แต้ม',no_spins:'ไม่มีสิทธิ์หมุน ลองแลกแต้มก่อนนะ',no_prize_available:'ไม่มีรางวัลเหลือในวงล้อ ติดต่อแอดมิน',code_invalid:'ไม่พบโค้ดนี้',code_inactive:'โค้ดนี้ปิดใช้งานแล้ว',code_expired:'โค้ดนี้หมดอายุแล้ว',code_used:'คุณใช้โค้ดนี้ไปแล้ว',code_full:'โค้ดนี้ถูกใช้ครบแล้ว',review_limit:'รีวิวได้สูงสุด '+DB.rules.rvMax+' ครั้งต่อบัญชี LINE',review_too_soon:'รีวิวติดต่อกันไม่ได้ กรุณารอสักครู่',member_not_found:'ไม่พบสมาชิก กรุณาเข้าสู่ระบบใหม่',bad_amount:'ยอดซื้อไม่ถูกต้อง',max_12_prizes:'มีรางวัลได้สูงสุด 12 ช่อง',min_2_prizes:'ต้องมีอย่างน้อย 2 รางวัล',bad_id:'LINE User ID ไม่ถูกต้อง'})[e&&e.message];
+const ERR=e=>({bad_pin:'PIN ไม่ถูกต้อง',not_enough_points:'แต้มไม่พอ ต้องใช้ '+DB.rules.perSpin+' แต้ม',no_spins:'ไม่มีสิทธิ์หมุน ลองแลกแต้มก่อนนะ',no_prize_available:'ไม่มีรางวัลเหลือในวงล้อ ติดต่อแอดมิน',code_invalid:'ไม่พบโค้ดนี้',code_inactive:'โค้ดนี้ปิดใช้งานแล้ว',code_expired:'โค้ดนี้หมดอายุแล้ว',code_used:'คุณใช้โค้ดนี้ไปแล้ว',code_full:'โค้ดนี้ถูกใช้ครบแล้ว',review_limit:'รีวิวได้สูงสุด '+DB.rules.rvMax+' ครั้งต่อบัญชี LINE',review_too_soon:'รีวิวติดต่อกันไม่ได้ กรุณารอสักครู่',member_not_found:'ไม่พบสมาชิก กรุณาเข้าสู่ระบบใหม่',bad_amount:'ยอดซื้อไม่ถูกต้อง',max_12_prizes:'มีรางวัลได้สูงสุด 12 ช่อง',min_2_prizes:'ต้องมีอย่างน้อย 2 รางวัล',bad_id:'LINE User ID ไม่ถูกต้อง',bad_image:'รูปไม่ถูกต้อง ลองเลือกรูปใหม่'})[e&&e.message];
 function fail(e){const m=(e&&e.message)||'';toast(ERR(e)||(/duplicate key/.test(m)?'มีโค้ดนี้อยู่แล้ว':(e instanceof TypeError?'เชื่อมต่อเซิร์ฟเวอร์ไม่ได้ ลองใหม่อีกครั้ง':'เกิดข้อผิดพลาด: '+m)))}
 /* ---------- แปลงข้อมูลจากฐานข้อมูลให้อยู่ในรูปที่หน้าเว็บใช้ ---------- */
 const T=s=>s?Date.parse(s):0;
@@ -241,15 +241,19 @@ const giftBox=(t,img)=>!(t||img)?'':`<div style="margin:14px 0;padding:14px;bord
 function setStar(n){tmp.st=n;document.querySelectorAll('.star').forEach((b,i)=>b.innerHTML=ic('star',30,'var(--y)',i<n?'var(--y)':'none'))}
 const rvPts=()=>DB.rules.rv==null?1:DB.rules.rv,rvMax=()=>DB.rules.rvMax==null?3:DB.rules.rvMax,rvCd=()=>DB.rules.rvCd==null?24:DB.rules.rvCd;
 const rvCount=m=>Math.max(m.rvn||0,DB.mine.reviews.length),rvLast=m=>Math.max(m.rvT||0,...DB.mine.reviews.map(r=>r.t));
+async function uploadImg(d){const b=await (await fetch(d)).blob();const id=crypto.randomUUID?crypto.randomUUID():Date.now()+''+Math.random().toString(36).slice(2),path=id+'.jpg';
+const r=await fetch(SB_URL+'/storage/v1/object/review-images/'+path,{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'image/jpeg','cache-control':'max-age=31536000'},body:b});
+if(!r.ok){let j={};try{j=await r.json()}catch(e){}throw new Error('upload: '+(j.message||r.status))}
+return SB_URL+'/storage/v1/object/public/review-images/'+path}
 async function sendRv(){const m=me();if(!m)return loginM();const n0=rvCount(m),cd=rvCd()*36e5,gap=Date.now()-rvLast(m);
 if(n0>=rvMax())return toast('รีวิวได้สูงสุด '+rvMax()+' ครั้งต่อบัญชี LINE');
 if(n0>0&&gap<cd)return toast('รีวิวติดต่อกันไม่ได้ กรุณารออีกประมาณ '+Math.ceil((cd-gap)/36e5)+' ชั่วโมง');
 const t=$('#rt').value.trim();if(!tmp.st)return toast('กรุณาให้คะแนนดาว');if(!t)return toast('กรุณาเขียนความคิดเห็น');
-try{await rpc('submit_review',{p_member:m.id,p_stars:tmp.st,p_body:t.slice(0,500),p_image:tmp.ri||null});tmp.st=0;tmp.ri=null;const g=rvPts();
+try{const url=tmp.ri?await uploadImg(tmp.ri):null;await rpc('submit_review',{p_member:m.id,p_stars:tmp.st,p_body:t.slice(0,500),p_image:url});tmp.st=0;tmp.ri=null;const g=rvPts();
 await Promise.all([loadMe(),loadPublic()]);toast(g>0?`ส่งรีวิวแล้ว ได้รับ ${g} แต้ม`:'ส่งรีวิวแล้ว ขอบคุณค่ะ');render()}catch(e){fail(e)}}
 const vis=()=>DB.reviews.filter(r=>!r.hidden),avg=()=>{const v=vis();return v.length?(v.reduce((s,r)=>s+r.stars,0)/v.length):0};
 function rvHtml(r,adm){const m=r.name!=null?{name:r.name,pic:r.pic}:mem(r.uid);
-return `<div class="rv${adm&&r.hidden?' off':''}"><div class="row">${av(m,36)}<div style="flex:1;min-width:0"><b>${esc(m?m.name:'สมาชิก')}</b> ${stars(r.stars)}<div class="mu">${fmt(r.t)}${r.hidden?' · ซ่อนอยู่':''}</div></div>${adm?`<button class="btn s o" onclick="hideRv(${r.id},${!r.hidden})">${r.hidden?'แสดง':'ซ่อน'}</button><button class="btn s dl" aria-label="ลบรีวิว" onclick="ask('ลบรีวิวนี้?',()=>delRv(${r.id}))">${ic('trash',14)}</button>`:''}</div><p style="margin:6px 0 0">${esc(r.text)}</p>${r.img?`<img class="ph" src="${esc(r.img)}" alt="รูปรีวิว">`:''}</div>`}
+return `<div class="rv${adm&&r.hidden?' off':''}"><div class="row">${av(m,36)}<div style="flex:1;min-width:0"><b>${esc(m?m.name:'สมาชิก')}</b> ${stars(r.stars)}<div class="mu">${fmt(r.t)}${r.hidden?' · ซ่อนอยู่':''}</div></div>${adm?`<button class="btn s o" onclick="hideRv(${r.id},${!r.hidden})">${r.hidden?'แสดง':'ซ่อน'}</button><button class="btn s dl" aria-label="ลบรีวิว" onclick="ask('ลบรีวิวนี้?',()=>delRv(${r.id}))">${ic('trash',14)}</button>`:''}</div><p style="margin:6px 0 0">${esc(r.text)}</p>${r.img?`<img class="ph" src="${esc(r.img)}" alt="รูปรีวิว" loading="lazy">`:''}</div>`}
 /* ---------- admin (เข้าที่ #admin เท่านั้น ไม่มีลิงก์ในหน้าร้าน) ---------- */
 const adm=async f=>{try{await f();await loadAdmin();render()}catch(e){fail(e)}};
 async function adLogin(){const pin=$('#ap').value;try{if(!(await rpc('admin_login',{p_pin:pin})))return toast('PIN ไม่ถูกต้อง');DB.pin=pin;DB.adm=true;SS.set('lw_pin',pin);await loadAdmin();render()}catch(e){fail(e)}}
